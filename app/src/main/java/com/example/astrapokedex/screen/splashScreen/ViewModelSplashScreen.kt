@@ -39,12 +39,12 @@ class ViewModelSplashScreen(application: Application) : AndroidViewModel(applica
         val pageSize = 100
         apiURL = "https://pokeapi.co/api/v2/pokemon/?limit=$pageSize"
 
-        _volleyRun.value = true
     }
 
 
     fun runVolleyPokemon() {
 
+        _volleyRun.value = true
         Timber.e("APi = $apiURL")
         val stringRequest = object : StringRequest(Method.GET, apiURL, { response: String ->
 

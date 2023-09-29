@@ -21,6 +21,7 @@ class GenerateTool @Inject constructor(private val context: Context) {
         mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         mDialog.setContentView(R.layout.custom_progres_bar)
         mDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        mDialog.setCancelable(false)
 
         return mDialog
     }
