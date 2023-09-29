@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pokemon"
+            type="com.example.astrapokedex.modal.model.ModelDetilPokemon" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{pokemon.nama}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_head"
+                android:textStyle="bold" />
+
+            <ImageView
+                imageUrl="@{pokemon.urlFoto}"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="fitCenter" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Weight (hectograms)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_body" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Height (decimetres)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_body" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@{pokemon.weight}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_body" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@{pokemon.heigh}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_body" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Type"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_head" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Abilities"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_head" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleAbilities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
